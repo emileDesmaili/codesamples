@@ -56,10 +56,7 @@ def daily_sentiment(start):
     else:
         for index, headline_row in headlines.iterrows():
             story=headline_row['text']
-#        for i in range (headlines.shape[0]):
-#            story_id = headlines.iat[i,2]
             try:
-#                story=ek.get_news_story(story_id)
                 soup = BeautifulSoup(story,"lxml") 
                 blob=TextBlob(soup.get_text()).sentiment[0]
                 vader=analyser.polarity_scores(soup.get_text())['compound']
@@ -103,8 +100,7 @@ def wordclouds(start):
                 continue
 
     stopwords= set(STOPWORDS)
-    stopwords.update(["will", "said", "important", "inherit", "color","Galaxy",
-                      "Company"])
+
     wordcloud = WordCloud(stopwords=stopwords,
                           background_color='white').generate(', '.join(text))
     plt.figure(figsize=[10,10])
@@ -116,9 +112,9 @@ def wordclouds(start):
     
 "-----------------------------------------------------------------------------"
 
-#zelogo=get_logo()
-#
-#wordclouds('2020-01-01')
+zelogo=get_logo()
+
+wordclouds('2020-01-01')
 
 
 reuters_sentiment=sentiment(start='2020-01-01')
