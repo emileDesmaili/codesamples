@@ -37,9 +37,9 @@ path_w=r'P:\Services\Fmr\forex\emile\Kalman hedging\equity hedge\equity_weekly_r
 path_m=r'P:\Services\Fmr\forex\emile\Kalman hedging\equity hedge\equity_monthly_reverse.xlsm'
 
 
-#book = load_workbook(path)
-#writer = pd.ExcelWriter(path, engine = 'openpyxl')
-#writer.book = book
+book = load_workbook(path)
+writer = pd.ExcelWriter(path, engine = 'openpyxl')
+writer.book = book
 
 
    
