@@ -62,8 +62,8 @@ plot_one  <- ggplot(heart_disease, aes(x=age,y=chol,color=as.factor(first_clust)
 plot_one 
 
 # Create and print the plot of age and chol for the second clustering algorithm
-cluster2=as.factor(second_clust)
-plot_two  <- ggplot(heart_disease, aes(x=age,y=chol,color=cluster2)) + geom_point()
+
+plot_two  <- ggplot(heart_disease, aes(x=age,y=chol,color=as.factor(second_clust))) + geom_point()
 
 plot_two
 
@@ -96,9 +96,9 @@ clust_summary <- do.call(data.frame, aggregate(. ~ hc_clust, data = hd_simple, f
 clust_summary
 
 # Plot age and chol
-plot_one  <- ggplot(hd_simple, aes(age,chol)) + geom_point(aes(color = as.factor(hc_clust)))
-plot_one 
+plot_3  <- ggplot(hd_simple, aes(age,chol)) + geom_point(aes(color = as.factor(hc_clust)))
+plot_3
 
 # Plot oldpeak and trestbps
-plot_two  <- ggplot(hd_simple, aes(oldpeak,trestbps)) + geom_point(aes(color = as.factor(hc_clust)))
-plot_two
+plot_4  <- ggplot(hd_simple, aes(oldpeak,trestbps)) + geom_point(aes(color = as.factor(hc_clust)))
+plot_4
